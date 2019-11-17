@@ -6,5 +6,41 @@
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UserForm</h2>
 
+<div class="container">
+  <form>
+
+    <h2>User Form</h2>
+
+    <div class="form-group">
+
+      <label class="col-form-label" for="first-name"> First name: </label>
+      <input type="text" class="form-control" id="first-name" placeholder="First name" data-bind="textInput: firstName">
+
+      <label class="col-form-label" for="last-name"> Last name: </label>
+      <input type="text" class="form-control" id="last-name" placeholder="Last name" data-bind="textInput: lastName" />
+
+      <label class="col-form-label" for="age"> Age: </label>
+      <input type="text" class="form-control" id="age" placeholder="Age" data-bind="textInput: age" />
+
+      <label class="col-form-label" for="email"> Email: </label>
+      <input type="email" class="form-control" id="email" placeholder="Email" data-bind="textInput: email" />
+
+      <label class="col-form-label" for="salary"> Salary: </label>
+      <input type="text" class="form-control" id="salary" placeholder="Salary" data-bind="textInput: salary" />
+    </div>
+
+    <div class="form-check form-group">
+      <label class="form-check-label" for="hired">
+        <input class="form-check-input" type="checkbox" id="hired" data-bind="checked: hired"> Hired
+      </label>
+    </div>
+
+    <div class="form-check form-group">
+      <label class="form-check-label" for="fired">
+        <input class="form-check-input" type="checkbox" id="fired" data-bind="checked: fired"> Fired
+      </label>
+    </div>
+
+  </form>
+</div>
