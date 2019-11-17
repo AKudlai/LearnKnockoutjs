@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace LearnKnockoutjs
+﻿namespace LearnKnockoutjs
 {
+    #region Usings
+    using System.Web.Http;
+    #endregion
+
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
