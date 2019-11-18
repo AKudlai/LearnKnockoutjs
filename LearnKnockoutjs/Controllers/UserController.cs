@@ -1,8 +1,7 @@
 ﻿namespace LearnKnockoutjs.Controllers
 {
-    #region Usings
     using System.Web.Mvc;
-    #endregion
+    using System.Linq;
 
     public class UserController : Controller
     {

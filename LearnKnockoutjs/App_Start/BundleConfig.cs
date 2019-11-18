@@ -1,8 +1,6 @@
 ﻿namespace LearnKnockoutjs
 {
-    #region Usings
     using System.Web.Optimization;
-    #endregion
 
     public class BundleConfig
     {

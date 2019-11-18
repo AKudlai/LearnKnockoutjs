@@ -1,8 +1,6 @@
 ﻿namespace LearnKnockoutjs
 {
-    #region Usings
     using System.Web.Http;
-    #endregion
 
     public static class WebApiConfig
     {
