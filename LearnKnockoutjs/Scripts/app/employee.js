@@ -1,4 +1,6 @@
-﻿///<reference path="../knockout/knockout-3.4.2.js"/>
+﻿/// <reference path="../knockout/knockout-3.4.2.js"/>
+/// <reference path="../knockout/knockout-mapping.js" />
+/// <reference path="../knockout/knockout-3.4.2.debug.js" />
 
 class Employee {
     constructor() {
@@ -12,4 +14,5 @@ class Employee {
     }
 }
 
-this.ko.applyBindings(new Employee());
+let employee = new Employee();
+ko.applyBindings(employee, document.getElementById('user-form-id'));
