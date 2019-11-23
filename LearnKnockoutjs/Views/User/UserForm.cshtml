@@ -44,3 +44,10 @@
 
   </form>
 </div>
+
+<script>
+  $(document).ready(function() {
+    let employee = new Employee();
+    ko.applyBindings(employee, $("#user-form-id")[0]);
+  });
+</script>

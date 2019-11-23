@@ -13,6 +13,3 @@ class Employee {
         this.fired = ko.observable(false);
     }
 }
-
-let employee = new Employee();
-ko.applyBindings(employee, document.getElementById('user-form-id'));
