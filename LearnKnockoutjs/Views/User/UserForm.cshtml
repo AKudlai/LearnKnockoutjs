@@ -31,7 +31,7 @@
     </div>
 
     <div class="form-inline">
-      <input type="text" class="form-control mb-2 mr-sm-2" id="hired-date-datepicker" data-bind="" />
+      <input type="text" class="form-control mb-2 mr-sm-2" id="hired-date-datepicker" data-bind="event: {change: setHiredCheckbox} " />
 
       <div class="form-check mb-2 mr-sm-2">
         <label class="form-check-label" for="hired">
@@ -40,9 +40,8 @@
       </div>
     </div>
 
-
     <div class="form-inline">
-      <input type="text" class="form-control mb-2 mr-sm-2" id="fired-date-datepicker" data-bind="" />
+      <input type="text" class="form-control mb-2 mr-sm-2" id="fired-date-datepicker" data-bind="event: {change: setFiredCheckbox} " />
 
       <div class="form-check mb-2 mr-sm-2">
         <label class="form-check-label" for="fired">
@@ -61,7 +60,7 @@
 
       $("#fired-date-datepicker").datepicker();
     } );
-
+    
     let employee = new Employee();
     ko.applyBindings(employee, $("#user-form-id")[0]);
   });
