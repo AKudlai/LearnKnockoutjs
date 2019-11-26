@@ -21,6 +21,9 @@
 
             bundles.Add(new ScriptBundle("~/bundles/knockout")
                 .Include("~/Scripts/knockout/knockout-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app")
+                .Include("~/Scripts/app/*.js"));
         }
     }
 }
