@@ -55,11 +55,9 @@
 <script>
   $(document).ready(function () {
     
-    $( function() {
-      $("#hired-date-datepicker").datepicker();
+    $("#hired-date-datepicker").datepicker();
 
-      $("#fired-date-datepicker").datepicker();
-    } );
+    $("#fired-date-datepicker").datepicker();
     
     let employee = new Employee();
     ko.applyBindings(employee, $("#user-form-id")[0]);
