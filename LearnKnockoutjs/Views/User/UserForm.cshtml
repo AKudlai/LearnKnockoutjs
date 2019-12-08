@@ -49,6 +49,12 @@
         </label>
       </div>
     </div>
+    <label for="position">Position</label>
+    <select class="form-control" id="position" data-bind="options: position,
+                                                          value: selectedPosition,
+                                                          optionsCaption: 'Choose...',
+                                                          event: {change: showSelectedPosition}">
+    </select>
   </form>
 </div>
 
