@@ -55,7 +55,15 @@
                                                           optionsCaption: 'Choose...',
                                                           event: {change: showSelectedPosition}">
     </select>
+    <div data-bind="visible: selectedPosition">
+      <span data-bind="style: {color: selectedPosition() === 'Developer' ? 'red' : 'black'}">Позиция Developer. Базовый оклад: 200$.</span><br />
+      <span data-bind="style: {color: selectedPosition() === 'QA' ? 'red' : 'black'}">Позиция QA. Базовый оклад: 100$.</span><br />
+      <span data-bind="style: {color: selectedPosition() === 'BA' ? 'red' : 'black'}">Позиция BA. Базовый оклад: 150$.</span><br />
+      <span data-bind="style: {color: selectedPosition() === 'Sales Manager' ? 'red' : 'black'}">Позиция Sales Manager. Базовый оклад: 180$.</span><br />
+      <span data-bind="style: {color: selectedPosition() === 'Scrum Master' ? 'red' : 'black'}">Позиция Scrum Master. Базовый оклад: 160$.</span><br />
+    </div>
   </form>
+  
 </div>
 
 <script>

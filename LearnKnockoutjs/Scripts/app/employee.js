@@ -11,8 +11,8 @@ class Employee {
         this.salary = ko.observable(100500);
         this.hired = ko.observable(false);
         this.fired = ko.observable(false);
-        this.position = ko.observableArray(['QA', 'BA', 'Sales Manager', 'Scrum Master']);
-        this.selectedPosition= ko.observable();
+        this.position = ko.observableArray(['Developer', 'QA', 'BA', 'Sales Manager', 'Scrum Master', 'Not Defined']);
+        this.selectedPosition = ko.observable(false);
     }
 
     setHiredCheckbox(data, event) {
