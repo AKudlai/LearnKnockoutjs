@@ -53,14 +53,12 @@
     <select class="form-control" id="position" data-bind="options: position,
                                                           value: selectedPosition,
                                                           optionsCaption: 'Choose...',
-                                                          event: {change: showSelectedPosition}">
-    </select>
-    <div data-bind="visible: selectedPosition">
-      <span data-bind="style: {color: selectedPosition() === 'Developer' ? 'red' : 'black'}">Позиция Developer. Базовый оклад: 200$.</span><br />
-      <span data-bind="style: {color: selectedPosition() === 'QA' ? 'red' : 'black'}">Позиция QA. Базовый оклад: 100$.</span><br />
-      <span data-bind="style: {color: selectedPosition() === 'BA' ? 'red' : 'black'}">Позиция BA. Базовый оклад: 150$.</span><br />
-      <span data-bind="style: {color: selectedPosition() === 'Sales Manager' ? 'red' : 'black'}">Позиция Sales Manager. Базовый оклад: 180$.</span><br />
-      <span data-bind="style: {color: selectedPosition() === 'Scrum Master' ? 'red' : 'black'}">Позиция Scrum Master. Базовый оклад: 160$.</span><br />
+                                                          event: {change: showSelectedPosition}"></select>
+    <div data-bind="foreach: position, visible: selectedPosition">
+      <span data-bind="if: $data != 'Not Defined', 
+                       style: {color: $parent.selectedPosition() === $data ? 'red' : 'black'}">
+                       Позиция <span data-bind="text: $data"></span>. Базовый оклад: 200$.
+      </span><br />
     </div>
   </form>
   
