@@ -44,4 +44,10 @@ class Employee {
             alert(this.selectedPosition().name);
         }
     }
+
+    ifPositionSelected() {
+        if (this.selectedPosition()) {
+            return this.selectedPosition() && this.selectedPosition().name != 'Not Defined';
+        }
+    }
 }

@@ -29,7 +29,7 @@
       <label class="col-form-label" for="salary"> Salary: </label>
       <input type="text" class="form-control" id="salary" placeholder="Salary" 
              data-bind="textInput: salary,
-                        enable: selectedPosition() && selectedPosition().name === 'Not Defined'" />
+                        enable: !ifPositionSelected()"/>
     </div>
 
     <div class="form-inline">
@@ -57,7 +57,7 @@
                                                           value: selectedPosition,
                                                           optionsCaption: 'Choose...',
                                                           event: {change: showSelectedPosition}"></select>
-    <div data-bind="foreach: position, visible: selectedPosition() && selectedPosition().name != 'Not Defined'">
+    <div data-bind="foreach: position, visible: ifPositionSelected()">
       <span data-bind="if: $data.name != 'Not Defined', 
                        style: {color: $parent.selectedPosition() && $parent.selectedPosition().name === $data.name ? 'red' : 'black'}">
                        Позиция <span data-bind="text: $data.name"></span>. Базовый оклад: $<span data-bind="text: $data.salary"></span>.
