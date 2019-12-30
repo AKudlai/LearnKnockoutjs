@@ -8,11 +8,17 @@ class Employee {
         this.lastName = ko.observable('Trust');
         this.age = ko.observable(18);
         this.email = ko.observable('alex@trust.com');
-        this.salary = ko.observable(100500);
+        this.salary = ko.pureComputed(() => this.selectedPosition() ? this.selectedPosition().salary : '');
         this.hired = ko.observable(false);
         this.fired = ko.observable(false);
-        this.position = ko.observableArray(['QA', 'BA', 'Sales Manager', 'Scrum Master']);
-        this.selectedPosition= ko.observable();
+        this.position = ko.observableArray([
+            { name: 'Developer', salary: 200 }, 
+            { name: 'QA', salary: 100 }, 
+            { name: 'BA', salary: 150 }, 
+            { name: 'Sales Manager', salary: 180 }, 
+            { name: 'Scrum Master', salary: 160 },
+            { name: 'Not Defined', salary: null }]);
+        this.selectedPosition = ko.observable(false);
     }
 
     setHiredCheckbox(data, event) {
@@ -35,7 +41,13 @@ class Employee {
 
     showSelectedPosition(data, event) {
         if (this.selectedPosition()) {
-            alert(this.selectedPosition());
+            alert(this.selectedPosition().name);
+        }
+    }
+
+    ifPositionSelected() {
+        if (this.selectedPosition()) {
+            return this.selectedPosition() && this.selectedPosition().name != 'Not Defined';
         }
     }
 }

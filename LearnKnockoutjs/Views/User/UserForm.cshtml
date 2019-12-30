@@ -27,7 +27,9 @@
       <input type="email" class="form-control" id="email" placeholder="Email" data-bind="textInput: email" />
 
       <label class="col-form-label" for="salary"> Salary: </label>
-      <input type="text" class="form-control" id="salary" placeholder="Salary" data-bind="textInput: salary" />
+      <input type="text" class="form-control" id="salary" placeholder="Salary" 
+             data-bind="textInput: salary,
+                        enable: !ifPositionSelected()"/>
     </div>
 
     <div class="form-inline">
@@ -51,11 +53,18 @@
     </div>
     <label for="position">Position</label>
     <select class="form-control" id="position" data-bind="options: position,
+                                                          optionsText: 'name',
                                                           value: selectedPosition,
                                                           optionsCaption: 'Choose...',
-                                                          event: {change: showSelectedPosition}">
-    </select>
+                                                          event: {change: showSelectedPosition}"></select>
+    <div data-bind="foreach: position, visible: ifPositionSelected()">
+      <span data-bind="if: $data.name != 'Not Defined', 
+                       style: {color: $parent.selectedPosition() && $parent.selectedPosition().name === $data.name ? 'red' : 'black'}">
+                       Позиция <span data-bind="text: $data.name"></span>. Базовый оклад: $<span data-bind="text: $data.salary"></span>.
+      </span><br />
+    </div>
   </form>
+  
 </div>
 
 <script>
